@@ -6,7 +6,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  List names = ["Semire", "is", "the", "goat"];
 
   @override
   Widget build(BuildContext context) {
@@ -14,20 +16,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: const Color.fromARGB(255, 143, 205, 255),
-        body: ListView(
-          scrollDirection: Axis.horizontal,
-          children: [
+        body: ListView.builder(
+          itemCount: names.length,
+          itemBuilder: (context, index) => ListTile(
 
-            //1st box
-            Container(height: 350, color: const Color.fromARGB(255, 122, 51, 255)),
-            //2nd box
-            Container(height: 350, color: const Color.fromARGB(255, 86, 78, 101)),
-            //3rd box
-            Container(height: 350, color: const Color.fromARGB(255, 80, 10, 211)),
-
-
-          ],
-        )
+            title: Text(names[index])
+          )),
       ),
     );
   }
