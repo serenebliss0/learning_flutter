@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,24 +14,19 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: const Color.fromARGB(255, 143, 205, 255),
-        appBar: AppBar(
-          title: Text("My First Flutter Project"),
-          elevation: 0,
-          leading: Icon(Icons.menu),
-          actions: [IconButton(onPressed: (){}, icon: Icon(Icons.account_circle))]
-        ),
-        body: Center(
-          child: Container(
-            height: 300,
-            width: 300,
-            decoration: BoxDecoration(
-            color: Colors.red,
-            borderRadius: BorderRadius.circular(20),
-            ),
-            padding: EdgeInsets.all(25),
-            child: Icon(Icons.ac_unit, size: 64),
-          ),
-        
+        body: ListView(
+          scrollDirection: Axis.horizontal,
+          children: [
+
+            //1st box
+            Container(height: 350, color: const Color.fromARGB(255, 122, 51, 255)),
+            //2nd box
+            Container(height: 350, color: const Color.fromARGB(255, 86, 78, 101)),
+            //3rd box
+            Container(height: 350, color: const Color.fromARGB(255, 80, 10, 211)),
+
+
+          ],
         )
       ),
     );
